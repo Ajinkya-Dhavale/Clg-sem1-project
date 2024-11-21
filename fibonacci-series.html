@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci Series Representation</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+  </head>
+  <body>
+    <header>
+        <div class="content-fit">
+            <!-- Brand Logo Link -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">Visual Representation</a>
+            </div>
+            <!-- Navigation Bar -->
+            <nav>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul class="navbar-nav" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="fibonacci-series.html">Fibonacci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="palindrome.html">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="matrix-multiplication.html">Matrix Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="strassen-matrix-multiplication.html">Strassen Matrix Multiplication</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  
+     <!--Main Navigation-->
+
+   
+      <div class="container mt-5">
+          <h1 class="display-4">Fibonacci Series</h1>
+          <p class="lead">Watch how the Fibonacci series is built step by step</p>
+      </div>
+  
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="terms">Enter the number of terms:</label>
+                      <input type="number" class="form-control" id="terms" placeholder="Enter a number" min="2">
+                  </div>
+                  <button class="btn btn-primary  btn-block mt-3" onclick="visualizeFibonacci()">Visualize Series</button>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Output Section -->
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <h5 class="series_title">Fibonacci Series Steps:</h5>
+                  <div id="output" class="fibonacci-output">
+                    
+                    <!-- <p class="fibonacci-step">0</p> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <script src="script.js"></script>
+  
+    </body>
+  </html>

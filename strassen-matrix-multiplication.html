@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci Series Representation</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+
+<body>
+
+    <!--Main Navigation-->
+    <header>
+        <div class="content-fit">
+            <!-- Brand Logo Link -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">Visual Representation</a>
+            </div>
+            <!-- Navigation Bar -->
+            <nav>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul class="navbar-nav" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="fibonacci-series.html">Fibonacci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="palindrome.html">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="matrix-multiplication.html">Matrix Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="strassen-matrix-multiplication.html">Strassen Matrix
+                            Multiplication</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Part -->
+
+    <div class="container mt-5">
+        <h1 class="display-5 strassen_gap_title">Strassen Matrix Multiplication</h1>
+    </div>
+
+    <div class="container container-flex ">
+        <!-- Left Section: Steps of the Algorithm -->
+        <div class="left-section">
+            <h1>Steps of Strassen's Algorithm</h1>
+            <p>
+                For two 2x2 matrices, <strong>A</strong> and <strong>B</strong>, Strassen’s algorithm divides them into
+                smaller 2x2 submatrices, reducing the multiplications to only 7 instead of 8.
+            </p>
+            <ol class="mt-1">
+                <li>1. Split each matrix A and B into four submatrices:</li>
+                <pre>
+
+    A = | A11 A12 |     B = | B11 B12 |
+        | A21 A22 |         | B21 B22 |
+        </pre>
+                <li>2. Calculate the following 7 products:</li>
+                <pre>
+    M1 = (A11 + A22) * (B11 + B22)
+    M2 = (A21 + A22) * B11
+    M3 = A11 * (B12 - B22)
+    M4 = A22 * (B21 - B11)
+    M5 = (A11 + A12) * B22
+    M6 = (A21 - A11) * (B11 + B12)
+    M7 = (A12 - A22) * (B21 + B22)
+        </pre>
+                <li>3. Use the products to build the result matrix C:</li>
+                <pre>
+    C11 = M1 + M4 - M5 + M7
+    C12 = M3 + M5
+    C21 = M2 + M4
+    C22 = M1 - M2 + M3 + M6
+        </pre>
+                <li>4. Combine C11, C12, C21, and C22 to form the final 2x2 result matrix:</li>
+                <pre>
+
+    C = | C11 C12 |
+        | C21 C22 |
+        </pre>
+            </ol>
+        </div>
+
+
+        <!-- Right Section: Interactive Matrix Input and Calculation -->
+        <div class="right-section">
+            <h2 class="text-center">Example of Strassen's 2x2 Matrix Multiplication</h2>
+            <div class="row mt-1 text-center">
+                <div class="col-md-6 combine_input_box">
+                    <div id="matrixA" class="matrix">
+                        <h4>Matrix A (2x2)</h4>
+                        <input type="number" id="a00" value="1"> <input type="number" id="a01" value="2"><br>
+                        <input type="number" id="a10" value="3"> <input type="number" id="a11" value="4">
+                    </div>
+                    <div id="matrixB" class="matrix">
+                        <h4>Matrix B (2x2)</h4>
+                        <input type="number" id="b00" value="5"> <input type="number" id="b01" value="6"><br>
+                        <input type="number" id="b10" value="7"> <input type="number" id="b11" value="8">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-1">
+                <button class="btn btn-primary" onclick="showStrassenCalculation()">Calculate using Strassen's
+                    Algorithm</button>
+            </div>
+
+            <div id="calculationDetails" class="text-center stressen_output"></div>
+
+            <div class="mt-1 text-center">
+                <h4>Result Matrix (C)</h4>
+                <div id="resultMatrix" class="matrix">
+                    <input type="text" id="c00" readonly> <input type="text" id="c01" readonly><br>
+                    <input type="text" id="c10" readonly> <input type="text" id="c11" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>

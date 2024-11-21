@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="content-fit">
+            <!-- Brand Logo Link -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">Visual Representation</a>
+            </div>
+            <!-- Navigation Bar -->
+            <nav>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul class="navbar-nav" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fibo">Fibonacci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#palin">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mat">Matrix Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#str">Strassen Matrix Multiplication</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section" id="banner">
+        <div class="content-fit">
+            <div class="title" id="banner-title" data-before="WEBSITEDESIGN">Mathematical Visualizations</div>
+        </div>
+        <img src="" class="decorate" alt="" style="width: 50vw; bottom: 0; right: 0;">
+        <img src="" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;">
+    </div>
+
+        <!-- Fibonacci Section -->
+    <div class="section" id="fibo">
+        <div class="content-fit">
+            <div class="number" id="fibo-no">01</div>
+            <div class="des">
+                <div class="title" id="fibo-title">Fibonacci Series</div>
+                <p id="fibo-describe" class="home_fibbo">The Fibonacci series is a sequence where each number is the sum of the two before it,
+                    starting from 0 and 1. The sequence looks like: 0, 1, 1, 2, 3, 5, 8, 13, ...
+                    It appears everywhere in nature, from the spirals of seashells to the petals of flowers,
+                    and even in art and architecture! It also plays a big role in computer algorithms and
+                    mathematics.
+                </p>
+                <a href="fibonacci-series.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palindrome Section -->
+    <div class="section" id="palin">
+        <div class="content-fit">
+            <div class="number" id="palin-no">02</div>
+            <div class="des">
+                <div class="title" id="palin-title">Palindrome Number</div>
+                <p id="palin-describe">
+                    A palindrome reads the same backward as forward.<br>
+                    <strong>Examples:</strong> 'madam', 121, 'radar'.<br>
+                    Palindromes can also include phrases such as "A man, a plan, a canal, Panama!" , They are studied in both linguistics and mathematics.
+                    A more efficient method for matrix multiplication using fewer operations.<br>
+                </p>
+                <a href="palindrome.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matrix Multiplication Section -->
+    <div class="section" id="mat">
+        <div class="content-fit">
+            <div class="number" id="mat-no">03</div>
+            <div class="des">
+                <div class="title" id="mat-title">Matrix Multiplication</div>
+                <p id="mat-describe">
+                    Matrix multiplication produces a new matrix by combining two matrices.<br>
+                    <strong>Example:</strong> A (2x3) * B (3x2) = C (2x2) <br>
+                    This operation follows specific rules, such as the number of columns in the first matrix
+                    must match the number of rows in the second. Matrix multiplication has applications in computer graphics, machine learning, and more.
+                </p>
+                <a href="matrix-multiplication.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strassen's Algorithm Section -->
+    <div class="section" id="str">
+        <div class="content-fit">
+            <div class="number" id="str-no">04</div>
+            <div class="des">
+                <div class="title" id="str-title">Strassen's Matrix Multiplication</div>
+                <p id="str-describe">
+                    A more efficient method for matrix multiplication using fewer operations.<br>
+                    <strong>Efficiency:</strong> O(n^2.81) vs O(n^3)<br>
+                    Strassen's method divides matrices into smaller submatrices, which reduces the number of
+                    multiplications needed. This algorithm is particularly useful for large matrices and is widely used in numerical
+                    computing.
+                    
+                </p>
+                <a href="strassen-matrix-multiplication.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 3D Container for Visualization -->
+    <div id="container3D"></div>
+
+    <!-- Link to External JavaScript (for 3D functionality) -->
+    <script type="module" src="app.js"></script>
+
+    <!-- Link to External JavaScript (for mobile menu toggle) -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

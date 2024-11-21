@@ -1,0 +1,294 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+    url(img/bg.png),
+    repeating-linear-gradient(
+        to right, transparent 0 500px, #73814B33 500px 501px
+    );
+    background-size: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2em; /* Add padding to the left */
+    padding-right: 2em; /* Add padding to the right */
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 60vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+
+
+
+/* Left-aligned content for Fibonacci and Matrix sections */
+#fibo .content-fit,
+#mat .content-fit {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;  /* Align the text and elements to the left */
+}
+
+/* Right-aligned content for Palindrome and Strassen sections */
+#palin .content-fit,
+#str .content-fit {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;  /* Align the text and elements to the right */
+}
+
+header {
+    padding-block: 1em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(
+        to right, transparent 0 500px, #eee1 500px 501px
+    );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: unset!important;
+    padding-block: unset!important;
+}
+
+/* Logo Styling */
+.logo-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: #eef8ce;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo-link:hover {
+    color: #d1ff48; /* Change color on hover */
+}
+
+/* Navbar Styles */
+nav ul.navbar-nav {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #eef8ce;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d1ff48; /* Hover color */
+    background-color: #3b3b3b;
+    border-radius: 5px;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none; /* Hide by default */
+    font-size: 2em;
+    color: #eef8ce;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Display Hamburger Icon in Mobile View */
+@media screen and (max-width: 1023px) {
+    .hamburger {
+        display: block;
+    }
+    nav ul.navbar-nav {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        gap: 0.5em;
+        width: 100%;
+        margin-top: 1em;
+    }
+    /* Mobile View for Open Navbar */
+    nav ul.navbar-nav.active {
+        display: flex; /* Show the nav links when active */
+        background-color: #1b1b1b;
+        border-radius: 8px;
+        padding: 1em 0;
+    }
+}
+
+/* Navbar link styling for Mobile */
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #eef8ce;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block; /* Make it block level in mobile view for better spacing */
+    text-align: center; /* Center-align text for mobile */
+}
+
+/* Mobile Menu Click Effect */
+.navbar-nav.active .nav-link {
+    background-color: #3b3b3b;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1023px) {
+    header .content-fit {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-link {
+        font-size: 1.5em;
+    }
+
+    .nav-link {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo-link {
+        font-size: 1.2em;
+    }
+
+    .nav-link {
+        font-size: 1.2em;
+    }
+}
+
+#banner .title {
+    color: #d1ff48;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #445022;
+}
+
+/* Section description text (Matrix, Palindrome, Fibonacci, Strassen) */
+#fibo-describe, #palin-describe, #mat-describe, #str-describe {
+    max-width: 800px; /* Set a maximum width for the text */
+    word-wrap: break-word; /* Allows long words to break and wrap properly */
+    word-break: break-word; /* Prevents content from overflowing if no spaces */
+    line-height: 1.6em; /* Adjust the line height for readability */
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 1.5em; /* Ensure space at the bottom */
+    text-align: justify; /* Justify text for better alignment */
+}
+
+
+.section .decorate {
+    position: absolute;
+}
+
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#container3D {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 3em;
+    }
+
+    .section .number {
+        font-size: 5em;
+    }
+
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+
+    #container3D {
+        position: absolute;
+    }
+}
