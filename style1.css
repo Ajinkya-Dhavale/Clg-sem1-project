@@ -76,8 +76,9 @@
     /* background-color: #fff; */
     border-radius: 0.75rem;
     /* border: 1px solid #dee2e6; */
-    min-height: 6rem;
-    max-height: 240px;
+    min-height:172px;
+    max-height:172px;
+    /* max-height: 240px; */
     overflow-y: auto;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 }
@@ -124,6 +125,7 @@
   .result-matrix {
     text-align: center;
     padding: 15px;
+    min-height: 118px;
     border-radius: 8px;
   }
   .result-matrix input{
@@ -232,7 +234,42 @@
     .left-section{
         border-right:0px;
     }
+    .footer-content span{
+        display: none;
+    }
 }
 /* .des button{
     float: left;
 } */
+
+/* Footer CSS */
+.footer-content
+{
+    padding: 13px;
+    color: white;
+    background-color: #333;
+    float: left;
+    width: 100%;
+}
+.footer-content span{
+    padding-top: 60px !important;
+    margin-left: 20px;
+}
+footer p {
+    margin: 0;
+    float: left;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+    float: right;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00aced;
+}
