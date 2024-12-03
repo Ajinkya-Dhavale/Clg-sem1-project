@@ -18,7 +18,7 @@ function visualizeFibonacci() {
   outputDiv.innerHTML = '';  // Clear previous output
 
   if (n <= 1) {
-      outputDiv.innerHTML = 'Please enter a number greater than 1.';
+      outputDiv.innerHTML = '<p class="palindrome-step">Please enter a number greater than 1.</p>';
       return;
   }
 
