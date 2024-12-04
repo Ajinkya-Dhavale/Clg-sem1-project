@@ -63,6 +63,7 @@
 .btn:hover {
     background-color: var(--bs-primary-dark);
     transform: translateY(-2px);
+    transform: scale(1.06,1.06);
 }
 
 .series_title{
@@ -114,6 +115,7 @@
     font-size: 20px;
     margin-top: 10px;
 }
+
 
 /* Matrix Multiplication */
 .matrix input {
@@ -196,6 +198,7 @@
 .stressen_output {
     max-height: 160px;
     overflow-y: auto;
+    color: #d1ff48;
     padding-left: 22.4%;
     scroll-behavior: smooth;
 }
@@ -333,6 +336,7 @@ footer p {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 0 auto;
+  color: #d1ff48;
   min-height: 120px;
   max-height: 250px;
   overflow-y: auto;
