@@ -49,19 +49,19 @@
       <div class="col-md-4 ">
         <div class="form-group text-center mt-1">
           <label for="n">Enter Rows (n) of Matrix A:</label>
-          <input type="number" id="n" value="2" class="form-control">
+          <input type="number" id="n" value="2" min="1" class="form-control">
         </div>
       </div>
       <div class="col-md-4 ">
         <div class="form-group text-center mt-1">
           <label for="m">Enter Columns (m) of Matrix A / Rows of Matrix B:</label>
-          <input type="number" id="m" value="2" class="form-control">
+          <input type="number" id="m" value="2" min="1" class="form-control">
         </div>
       </div>
       <div class="col-md-4 ">
         <div class="form-group text-center mt-1">
           <label for="p">Enter Columns (p) of Matrix B:</label>
-          <input type="number" id="p" value="2" class="form-control">
+          <input type="number" id="p" value="2" min="1" class="form-control">
         </div>
       </div>
     </div>
@@ -81,15 +81,74 @@
 
     <div class="row mt-1">
       <div class="col text-center">
-        <button class="btn btn-primary" onclick="multiplyMatrices()">Multiply Matrices</button>
+        <button class="btn btn-primary" onclick="multiplyMatrices()">Multiply Matrices</button><br><br>
+        
       </div>
     </div>
 
-    <div class="row text-center">
-      <div id="resultMatrix" class="col-md-12 matrix result-matrix">
+
+    <style>
+
+/* Wrapper for both matrix sections */
+.matrix-container {
+  margin-top: -20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between the columns */
+}
+
+/* Step-by-step calculations */
+.matrix-container .step-by-step {
+  margin-top: 16px;
+  flex: 1;
+  overflow-y: auto;
+  text-align: center;
+  max-height: 250px; 
+}
+
+/* Result matrix */
+
+.matrix-container .result-matrix {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 250px; /* Limit height */
+}
+
+.matrix-container h3 {
+  margin-bottom: 30px;
+  text-align: center; /* Ensure the heading is centered */
+}
+
+.matrix-container #temp,.matrix-container #resultMatrix {
+  padding: 10px;
+  /* background-color: #b9b6b69d; */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 auto;
+  min-height: 120px;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 90%;
+}
+
+    </style>
+
+    <div class="container">
+      <div class="matrix-container">
+        <!-- Step-by-Step Calculation Side -->
+        <h3>Rough Work</h3>
+        <div class="matrix step-by-step">
+          <div id="temp"></div>
+        </div>
+    
+        <!-- Result Matrix Side -->
         <h3>Result Matrix</h3>
+        <div class="matrix result-matrix">
+          <div id="resultMatrix"></div>
+        </div>
       </div>
     </div>
+    
   </div>
 
   <footer>

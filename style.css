@@ -151,6 +151,7 @@ nav ul.navbar-nav {
 /* Display Hamburger Icon in Mobile View */
 @media screen and (max-width: 1023px) {
     .hamburger {
+        
         display: block;
     }
     nav ul.navbar-nav {
@@ -217,7 +218,7 @@ nav ul.navbar-nav {
 
 #banner .title {
     color: #d1ff48;
-    font-size: 11em;
+    font-size: 10.5em;
     font-family: "devil breeze";
     font-weight: bold;
     position: relative;
@@ -258,7 +259,7 @@ nav ul.navbar-nav {
 
 .section .content-fit .title {
     font-family: "devil breeze";
-    font-size: 5em;
+    font-size: 4.8em;
     font-weight: bold;
 }
 

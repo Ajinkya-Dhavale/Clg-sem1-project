@@ -9,8 +9,6 @@ hamburger.addEventListener('click', () => {
 
 
 
-
-
 // Function to visualize Fibonacci series
 function visualizeFibonacci() {
   const n = document.getElementById('terms').value;
@@ -107,33 +105,57 @@ function visualizeFibonacci() {
     let n = parseInt(document.getElementById('n').value);
     let m = parseInt(document.getElementById('m').value);
     let p = parseInt(document.getElementById('p').value);
+    let temp = document.getElementById("temp");
 
     let resultMatrix = document.getElementById('resultMatrix');
-    resultMatrix.innerHTML = '<h3>Result Matrix (' + n + ' x ' + p + ')</h3>';
-    let result = Array.from({ length: n }, () => Array(p).fill(0));
+    //resultMatrix.innerHTML = '<h3>Result Matrix (' + n + ' x ' + p + ')</h3>';
+    resultMatrix.innerHTML="";
+    let result = [];
 
     for (let i = 0; i < n; i++) {
-      for (let j = 0; j < p; j++) {
-        result[i][j] = 0;
-        for (let k = 0; k < m; k++) {
-          let aElement = document.getElementById(`a${i}${k}`);
-          let bElement = document.getElementById(`b${k}${j}`);
-          let a = parseFloat(aElement.value);
-          let b = parseFloat(bElement.value);
-
-          aElement.classList.add('highlight');
-          bElement.classList.add('highlight');
-          result[i][j] += a * b;
-          await new Promise(r => setTimeout(r, 1000));
-
-          aElement.classList.remove('highlight');
-          bElement.classList.remove('highlight');
+        result[i] = [];
+        for (let j = 0; j < p; j++) {
+            result[i][j] = 0;
         }
-        resultMatrix.innerHTML += `<input type="number" value="${result[i][j]}" readonly> `;
-      }
-      resultMatrix.innerHTML += '<br>';
     }
-  }
+
+    temp.innerHTML = ""; // Clear initial content
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < p; j++) {
+            let multiplicationSteps = `result[${i}][${j}] = `;
+            let fullCalculation = "";
+            result[i][j] = 0;
+
+            for (let k = 0; k < m; k++) {
+                let aElement = document.getElementById(`a${i}${k}`);
+                let bElement = document.getElementById(`b${k}${j}`);
+                let a = parseFloat(aElement.value);
+                let b = parseFloat(bElement.value);
+
+                if (k > 0) multiplicationSteps += " + ";
+                multiplicationSteps += `a${i}${k} * b${k}${j} (${a} * ${b})`;
+                fullCalculation += `a${i}${k} * b${k}${j} (${a} * ${b})`;
+                if (k < m - 1) fullCalculation += " + ";
+
+                aElement.classList.add('highlight');
+                bElement.classList.add('highlight');
+                result[i][j] += a * b;
+
+                await new Promise(r => setTimeout(r, 1000));
+                aElement.classList.remove('highlight');
+                bElement.classList.remove('highlight');
+            }
+
+            // Append the final result for each element
+            temp.innerHTML += `result[${i}][${j}] = ${fullCalculation} = ${result[i][j]}<br>`;
+            
+            resultMatrix.innerHTML += `<input type="number" value="${result[i][j]}" readonly> `;
+        }
+        resultMatrix.innerHTML += '<br>';
+    }
+}
+
 
 
   // stressen Matrix Multiplication
@@ -215,6 +237,8 @@ async function showStrassenCalculation() {
     await new Promise(resolve => setTimeout(resolve, 2000));
     calculationDetails.scrollTop = calculationDetails.scrollHeight;
 
+    highlightInputs([]);
+
     // Calculate C matrix
     let c00 = M1 + M4 - M5 + M7;
     let c01 = M3 + M5;
@@ -223,24 +247,20 @@ async function showStrassenCalculation() {
 
     // Display results one by one with delay
     calculationDetails.innerHTML += `<p>C<sub>00</sub> = M<sub>1</sub> + M<sub>4</sub> - M<sub>5</sub> + M<sub>7</sub> = ${M1} + ${M4} - ${M5} + ${M7} = ${c00}</p>`;
-    highlightInputs(['a00', 'a11', 'b00', 'b11']);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    calculationDetails.scrollTop = calculationDetails.scrollHeight; // Wait 1 second before displaying C01
+    calculationDetails.scrollTop = calculationDetails.scrollHeight;
 
     calculationDetails.innerHTML += `<p>C<sub>01</sub> = M<sub>3</sub> + M<sub>5</sub> = ${M3} + ${M5} = ${c01}</p>`;
-    highlightInputs(['a00', 'a01', 'b11']);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    calculationDetails.scrollTop = calculationDetails.scrollHeight; // Wait 1 second before displaying C10
+    calculationDetails.scrollTop = calculationDetails.scrollHeight;
 
     calculationDetails.innerHTML += `<p>C<sub>10</sub> = M<sub>2</sub> + M<sub>4</sub> = ${M2} + ${M4} = ${c10}</p>`;
-    highlightInputs(['a10', 'a11', 'b00']);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    calculationDetails.scrollTop = calculationDetails.scrollHeight; // Wait 1 second before displaying C11
+    calculationDetails.scrollTop = calculationDetails.scrollHeight; 
 
     calculationDetails.innerHTML += `<p>C<sub>11</sub> = M<sub>1</sub> - M<sub>2</sub> + M<sub>3</sub> + M<sub>6</sub> = ${M1} - ${M2} + ${M3} + ${M6} = ${c11}</p>`;
-    highlightInputs(['a10', 'a11', 'b01']);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    calculationDetails.scrollTop = calculationDetails.scrollHeight; // Final wait before removing highlights
+    calculationDetails.scrollTop = calculationDetails.scrollHeight; 
 
     // Display results in the result matrix
     document.getElementById('c00').value = c00;
@@ -248,6 +268,4 @@ async function showStrassenCalculation() {
     document.getElementById('c10').value = c10;
     document.getElementById('c11').value = c11;
 
-    // Remove highlights after calculation
-    highlightInputs([]);
 }

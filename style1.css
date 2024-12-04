@@ -196,6 +196,7 @@
 .stressen_output {
     max-height: 160px;
     overflow-y: auto;
+    padding-left: 22.4%;
     scroll-behavior: smooth;
 }
 
@@ -222,8 +223,13 @@
     column-gap: 100px;
     flex-direction: row;
 }
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
+    
+    .stressen_output {
+        padding-left: 10%;
+    }
 
     .fibonacci-output {
         min-height:180px;
@@ -247,6 +253,7 @@
     .footer-content span{
         display: none;
     }
+
 }
 /* .des button{
     float: left;
@@ -282,4 +289,8 @@ footer p {
 
 .social-icons a:hover {
     color: #00aced;
+}
+
+.btn:hover{
+    cursor: pointer;
 }
