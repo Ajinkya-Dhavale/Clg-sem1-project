@@ -1,0 +1,350 @@
+/* Importing custom fonts */
+@import url('https://fonts.cdnfonts.com/css/devil-breeze'); /* Importing Devil Breeze font */
+@import url('https://fonts.cdnfonts.com/css/poppins'); /* Importing Poppins font */
+@import url('https://fonts.cdnfonts.com/css/bimbo'); /* Importing Bimbo font */
+
+/* General styles for the body */
+body {
+    margin: 0; /* Removes default margin */
+    font-family: "Montserrat", sans-serif; /* Sets the default font family */
+    background-color: #1B1B1B; /* Dark background color */
+    color: #eef8ce; /* Light text color */
+    font-family: 'Poppins', sans-serif; /* Overwrites the default font to Poppins */
+    font-size: 14px; /* Sets base font size */
+    background-image: url(img/bg.png); /* Background image */
+    background-size: 100%; /* Ensure the background image covers the entire body */
+}
+
+/* Customizing the appearance of the scrollbar */
+*::-webkit-scrollbar {
+    width: 0; /* Hides the scrollbar */
+}
+
+/* Universal selector for general resets */
+* {
+    padding: 0px; /* Resets padding */
+    margin: 0px; /* Resets margin */
+    list-style: none; /* Removes bullet points from lists */
+    box-sizing: border-box; /* Ensures padding and borders are included in element size */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Styles for sections on the page */
+.section {
+    width: 100%; /* Full width */
+    min-height: 100vh; /* Ensures sections take at least full viewport height */
+    position: relative; /* Positions the section relative to the parent */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    padding-left: 2em; /* Adds padding to the left */
+    padding-right: 2em; /* Adds padding to the right */
+}
+
+/* Defines the content container inside sections */
+.content-fit {
+    width: min(1200px, 90vw); /* Maximum width is 1200px, but 90% of the viewport width */
+    margin: auto; /* Centers content horizontally */
+    min-height: 60vh; /* Ensures the content has at least 60% of the viewport height */
+    position: relative; /* Allows positioning inside sections */
+    padding-block: 10em; /* Adds vertical padding */
+}
+
+/* Adjustments for specific sections */
+#fibo .content-fit, #mat .content-fit {
+    margin-left: 0; /* Removes left margin */
+    margin-right: auto; /* Ensures content is aligned to the left */
+    text-align: left; /* Aligns text to the left */
+}
+
+#palin .content-fit, #str .content-fit {
+    margin-left: auto; /* Ensures content is aligned to the right */
+    margin-right: 0; /* Removes right margin */
+    text-align: right; /* Aligns text to the right */
+}
+
+/* Styles for the header section */
+header {
+    padding-block: 1em 0; /* Adds vertical padding */
+    position: fixed; /* Fixes the header to the top of the page */
+    top: 0; /* Aligns the header to the top */
+    left: 0; /* Aligns the header to the left */
+    width: 100%; /* Full width */
+    height: 5em; /* Sets height */
+    z-index: 100; /* Ensures it stays on top of other elements */
+    backdrop-filter: blur(20px); /* Applies a blur effect to the background */
+    background-color: #1B1B1B11; /* Semi-transparent dark background */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically centers elements */
+    padding: 1em; /* Adds padding around the content */
+}
+
+/* Flexbox layout for the content inside header */
+header .content-fit {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Vertically centers elements */
+    width: 100%; /* Full width */
+    min-height: unset!important; /* Overrides any set min-height */
+    padding-block: unset!important; /* Removes any padding */
+}
+
+/* Styles for the logo */
+.logo-link {
+    font-family: 'Poppins', sans-serif; /* Font family for logo */
+    font-size: 2em; /* Larger font size for logo */
+    color: #eef8ce; /* Light color */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the logo text bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for the logo */
+.logo-link:hover {
+    color: #d1ff48; /* Change color on hover */
+}
+
+/* Styles for the navigation bar */
+nav ul.navbar-nav {
+    display: flex; /* Flexbox layout */
+    gap: 2em; /* Adds space between navigation items */
+    list-style: none; /* Removes bullets */
+    margin: 0; /* Removes margin */
+    padding: 0; /* Removes padding */
+    align-items: center; /* Vertically centers items */
+}
+
+/* Positioning each navigation item */
+.nav-item {
+    position: relative; /* Relative positioning for nav items */
+}
+
+/* Styles for the navigation links */
+.nav-link {
+    font-family: 'Poppins', sans-serif; /* Font for links */
+    color: #eef8ce; /* Light text color */
+    text-decoration: none; /* Removes underline */
+    padding: 0.5em 1em; /* Adds padding inside the links */
+    font-size: 1.2em; /* Sets font size */
+    font-weight: 500; /* Medium font weight */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the navigation links */
+.nav-link:hover {
+    color: #d1ff48; /* Change color on hover */
+    background-color: #3b3b3b; /* Change background on hover */
+    border-radius: 5px; /* Round corners */
+}
+
+/* Hamburger menu styles (for mobile view) */
+.hamburger {
+    display: none; /* Hides hamburger by default */
+    font-size: 2em; /* Large font size */
+    color: #eef8ce; /* Light text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-left: auto; /* Aligns the hamburger to the right */
+}
+
+/* Media query for tablet and mobile screens (<=1023px) */
+@media screen and (max-width: 1023px) {
+    .hamburger {
+        display: block; /* Shows hamburger icon on small screens */
+    }
+    nav ul.navbar-nav {
+        display: none; /* Hides navigation by default */
+        flex-direction: column; /* Makes nav items stack vertically */
+        gap: 0.5em; /* Space between items */
+        width: 100%; /* Full width */
+        margin-top: 1em; /* Adds margin to the top */
+    }
+    nav ul.navbar-nav.active {
+        display: flex; /* Shows the navigation when active */
+        background-color: #1b1b1b; /* Dark background */
+        border-radius: 8px; /* Rounded corners */
+        padding: 1em 0; /* Vertical padding */
+    }
+}
+
+/* Active navigation link appearance */
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #eef8ce;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block; /* Makes it a block element */
+    text-align: center; /* Centers the text */
+}
+
+/* Active state for navigation items */
+.navbar-nav.active .nav-link {
+    background-color: #3b3b3b; /* Dark background */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 0.5em; /* Adds space below */
+}
+
+/* Media query for screen width <= 1023px (tablet/mobile view) */
+@media screen and (max-width: 1023px) {
+    header .content-fit {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: flex-start; /* Aligns to the left */
+    }
+    .logo-link {
+        font-size: 1.5em; /* Smaller logo size */
+    }
+    .nav-link {
+        font-size: 1.2em; /* Adjusts nav link font size */
+    }
+}
+
+/* Media query for screen width <= 767px (smaller mobile view) */
+@media screen and (max-width: 767px) {
+    .logo-link {
+        font-size: 1.2em; /* Smaller logo size */
+    }
+    .nav-link {
+        font-size: 1.2em; /* Smaller nav link size */
+    }
+}
+
+/* Styles for the banner title */
+#banner .title {
+    color: #d1ff48; /* Text color */
+    font-size: 10.5em; /* Large font size */
+    font-family: "devil breeze"; /* Custom font */
+    font-weight: bold; /* Bold text */
+    position: relative; /* Allows positioning for effects */
+    text-align: center; /* Centers text */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text; /* Clipping text effect */
+    color: transparent; /* Makes text transparent to show background */
+    font-size: 10vw; /* Responsive font size */
+    animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms; /* Adds animations */
+}
+
+/* Before pseudo-element for the banner title */
+#banner .title::before {
+    content: attr(data-before); /* Inserts data attribute content */
+    position: absolute; /* Absolute positioning */
+    top: 0.5em; /* Adds top spacing */
+    inset: 0.66em 0 0 0; /* Custom inset positioning */
+    z-index: -1; /* Places behind the text */
+    color: #445022; /* Dark green color */
+}
+
+/* Keyframe animation for reveal effect */
+@keyframes reveal {
+    80% {
+        letter-spacing: 8px; /* Expands letter spacing */
+    }
+    100% {
+        background-size: 300% 300%; /* Expands the background */
+    }
+}
+
+/* Keyframe animation for the glow effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 2px #d1ff48, 0 0 2px #d1ff48, 0 0 2px #d1ff48; /* Glowing text effect */
+    }
+    50% {
+        text-shadow: 0 0 2px #d1ff48, 0 0 2px #d1ff48, 0 0 2px #d1ff48; /* Stronger glow */
+    }
+    100% {
+        text-shadow: 0 0 5px #d1ff48, 0 0 5px #d1ff48, 0 0 5px #d1ff48; /* Fades back */
+    }
+}
+
+
+/* Keyframes for subtle glow animation */
+@keyframes subtleGlow {
+    0% {
+        box-shadow: 0 0 4px rgba(209, 255, 72, 0.3); /* Initial glow */
+    }
+    50% {
+        box-shadow: 0 0 6px rgba(209, 255, 72, 0.5); /* Stronger glow */
+    }
+    100% {
+        box-shadow: 0 0 4px rgba(209, 255, 72, 0.3); /* Fade back */
+    }
+}
+
+/* Description text in the sections */
+/* Description Animations */
+#fibo-describe, #palin-describe, #mat-describe, #str-describe {
+    max-width: 800px;
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.6em;
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 1.5em;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+/* Link Transitions */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #eef8ce;
+    transition: all 0.3s ease;
+}
+
+
+/* Decorative elements within sections */
+.section .decorate {
+    position: absolute; /* Absolute positioning */
+}
+
+/* Number styling in sections */
+.section .number {
+    font-family: "devil breeze"; /* Custom font */
+    font-size: 15em; /* Large font size */
+    font-weight: bold; /* Bold font */
+}
+
+/* Title styling within sections */
+.section .content-fit .title {
+    font-family: "devil breeze"; /* Custom font */
+    font-size: 4.8em; /* Font size */
+    font-weight: bold; /* Bold text */
+}
+
+/* 3D container positioning */
+#container3D {
+    position: fixed; /* Fixed position */
+    inset: 0; /* Aligns to the edges of the viewport */
+    z-index: 110; /* Ensures it's above most content */
+    pointer-events: none; /* Prevents interaction with the container */
+    animation: none; /* No animation */
+}
+
+/* Mobile adjustments for larger screens (<= 1023px) */
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 5em; /* Adjusts title size */
+    }
+}
+
+/* Mobile adjustments for smaller screens (<= 767px) */
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 4.2em; /* Smaller title */
+    }
+    .section .number {
+        font-size: 5em; /* Smaller section number */
+    }
+    .section .content-fit .title {
+        font-size: 2em; /* Smaller title */
+    }
+    #container3D {
+        position: absolute; /* Adjust 3D container for smaller view */
+    }
+}

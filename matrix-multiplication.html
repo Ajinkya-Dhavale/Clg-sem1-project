@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci Series Representation</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+  
+     <!--Main Navigation-->
+     <header>
+      <div class="content-fit">
+          <!-- Brand Logo Link -->
+          <div class="logo">
+              <a href="index.html" class="logo-link">Visual Representation</a>
+          </div>
+          <!-- Navigation Bar -->
+          <nav>
+              <!-- Hamburger Icon for Mobile -->
+              <div class="hamburger" id="hamburger">&#9776;</div>
+              <ul class="navbar-nav" id="nav-list">
+                  <li class="nav-item">
+                      <a class="nav-link" href="fibonacci-series.html">Fibonacci Series</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="palindrome.html">Palindrome Number</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="matrix-multiplication.html">Matrix Multiplication</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="strassen-matrix-multiplication.html">Strassen Matrix Multiplication</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+  <div class="container mt-5">
+    <h1 class="display-5 m-2">Matrix Multiplication (n x m) * (m x p)</h1>
+    <!-- <p class="lead">Multiply two matrices</p> --><p class="lead">Multiply two matrices and see the result step by step.</p>
+  </div>
+
+  <div class="container">
+    <div class="row_matrix">
+      <div class="col-md-4 ">
+        <div class="form-group text-center mt-1">
+          <label for="n">Enter Rows (n) of Matrix A:</label>
+          <input type="number" id="n" value="2" min="1" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="form-group text-center mt-1">
+          <label for="m">Enter Columns (m) of Matrix A / Rows of Matrix B:</label>
+          <input type="number" id="m" value="2" min="1" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="form-group text-center mt-1">
+          <label for="p">Enter Columns (p) of Matrix B:</label>
+          <input type="number" id="p" value="2" min="1" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-primary" onclick="generateMatrices()">Generate Matrices</button>
+    </div>
+
+    <div class="row_matrix text-center mt-1">
+      <div id="matrixA" class="col-md-6 matrix">
+        <h3>Matrix A</h3>
+      </div>
+      <div id="matrixB" class="col-md-6 matrix">
+        <h3>Matrix B</h3>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col text-center">
+        <button class="btn btn-primary" onclick="multiplyMatrices()">Multiply Matrices</button><br><br>
+        
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="matrix-container">
+        <!-- Step-by-Step Calculation Side -->
+        <h3>Rough Work</h3>
+        <div class="matrix step-by-step">
+          <div id="temp"></div>
+        </div>
+    
+        <!-- Result Matrix Side -->
+        <h3>Result Matrix</h3>
+        <div class="matrix result-matrix">
+          <div id="resultMatrix"></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <footer>
+    <div class="footer-content">
+        <div class="social-icons">
+            <p>Mathematical Visualizations</p>
+            <span>© 2024-2025 All rights reserved.</span>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+  <script src="script.js"></script>
+    </body>
+  </html>

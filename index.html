@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="content-fit">
+            <!-- Brand Logo Link -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">Visual Representation</a>
+            </div>
+            <!-- Navigation Bar -->
+            <nav>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul class="navbar-nav" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fibo">Fibonacci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#palin">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mat">Matrix Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#str">Strassen Matrix Multiplication</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section" id="banner">
+        <div class="content-fit">
+            <div class="title" id="banner-title" data-before="Mathematical">Mathematical Visualizations</div>
+        </div>
+        <img src="" class="decorate" alt="" style="width: 50vw; bottom: 0; right: 0;">
+        <img src="" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;">
+    </div>
+
+        <!-- Fibonacci Section -->
+    <div class="section" id="fibo">
+        <div class="content-fit">
+            <div class="number" id="fibo-no">01</div>
+            <div class="des">
+                <div class="title" id="fibo-title">Fibonacci Series</div>
+                <p id="fibo-describe" class="home_fibbo">The Fibonacci series is a fascinating sequence where each number is the sum of the two preceding ones, beginning with 0 and 1. This creates a mesmerizing pattern: 0, 1, 1, 2, 3, 5, 8, 13, ....
+
+                    But the magic of Fibonacci doesn’t stop at numbers—it’s woven into the fabric of our world! You’ll find it in the spirals of seashells, the arrangement of petals on flowers, and even in the designs of iconic art and architecture. Beyond nature and beauty, the Fibonacci sequence is a cornerstone of mathematical theory and a vital tool in cutting-edge computer algorithms.
+                    
+                    It’s more than a sequence; it’s a universal blueprint of harmony and efficiency, hidden in plain sight!
+                </p>
+                <a href="fibonacci-series.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palindrome Section -->
+    <div class="section" id="palin">
+        <div class="content-fit">
+            <div class="number" id="palin-no">02</div>
+            <div class="des">
+                <div class="title" id="palin-title">Palindrome Number</div>
+                <p id="palin-describe">
+                    A palindrome is a unique word, number, or phrase that reads the same backward as it does forward—like a perfect mirror of itself!<br>
+
+                    Examples:<br>
+                    Words: madam, radar
+                    Numbers: 121
+                    Phrases: "A man, a plan, a canal, Panama!"<br>
+                    Palindromes aren’t just linguistic curiosities; they also hold a special place in mathematics and logic, offering elegant patterns and insights.
+                    
+                    On another fascinating note, in the world of mathematics, scientists have devised more efficient methods for matrix multiplication, reducing the number of operations needed and revolutionizing computational processes.<br>
+                    
+                    These concepts highlight the beauty of symmetry and efficiency in language, math, and beyond!
+                </p>
+                <a href="palindrome.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matrix Multiplication Section -->
+    <div class="section" id="mat">
+        <div class="content-fit">
+            <div class="number" id="mat-no">03</div>
+            <div class="des">
+                <div class="title" id="mat-title">Matrix Multiplication</div>
+                <p id="mat-describe">
+                    Matrix multiplication is where numbers meet precision to create something entirely new! It’s the process of combining two matrices, but not randomly—there’s a method to the magic.<br>
+
+                    <strong>What Happens:</strong><br>
+                    Take matrix A (2x3) and matrix B (3x2). Multiply them, and you’ll get matrix C with dimensions (2x2). Here’s the golden rule: the number of columns in the first matrix must match the number of rows in the second.<br>
+                    
+                    <strong>Why It’s Game-Changing:</strong><br>
+                    This operation goes beyond math class—it’s the engine driving:<br>
+                    
+                    <strong>Realistic Computer Graphics:</strong> Turning numbers into dazzling visuals.
+                    Machine Learning Models: Teaching AI to think smarter.
+                    Data Science: Solving systems and crunching massive datasets.<br>
+                    Matrix multiplication isn’t just calculation; it’s the math behind the world’s most cutting-edge innovations! 
+                </p>
+                <a href="matrix-multiplication.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strassen's Algorithm Section -->
+    <div class="section" id="str">
+        <div class="content-fit">
+            <div class="number" id="str-no">04</div>
+            <div class="des">
+                <div class="title" id="str-title">Strassen's Matrix Multiplication</div>
+                <p id="str-describe">
+                    Matrix multiplication just got smarter! Traditional methods can be time-consuming, but Strassen’s algorithm revolutionizes the process by making it faster and more efficient.<br>
+
+                    <strong>Why It’s Better:</strong><br>
+                    <strong>Efficiency Boost : Reduces the computational complexity from O(n³) to O(n².81).<br></strong>
+                    <strong>How It Works ?<br></strong> Strassen’s method breaks matrices into smaller submatrices, strategically cutting down the number of multiplications required.
+                    <strong>Where It Shines?</strong><br>
+                    Strassen’s approach is a game-changer for handling large matrices, making it indispensable in fields like:<br>
+                    
+                    Numerical Computing: Processing massive datasets efficiently.
+                    Scientific Simulations: Speeding up complex calculations.
+                    High-Performance Computing: Enhancing the power of supercomputers.
+                    This innovative algorithm isn’t just about speed; it’s about transforming how we solve big problems in a big-data world!
+                    
+                </p>
+                <a href="strassen-matrix-multiplication.html">
+                    <button class="btn btn-primary">Let's Learn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 3D Container for Visualization -->
+    <div id="container3D"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <p>Mathematical Visualizations</p>
+                <span>© 2024-2025 All rights reserved.</span>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Link to External JavaScript (for 3D functionality) -->
+    <script type="module" src="app.js"></script>
+
+    <!-- Link to External JavaScript (for mobile menu toggle) -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
